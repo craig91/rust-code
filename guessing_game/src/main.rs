@@ -25,10 +25,10 @@ fn main() { // entry point into the program
         .read_line(&mut guess) // gets input from the user and stores the input in the guess variable
         .expect("Failed to read line");
 
-    let guess: u32 = guess.trim().parse(){
-        Ok(num) => num,
-        Err(_) => continue,
-    };
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
 
     println!("You guessed: {guess}");
 
