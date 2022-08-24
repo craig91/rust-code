@@ -1,4 +1,4 @@
-use stdio::io; 
+use std::io; 
 
 fn main() { // entry point into the program
     println!("Guess the number!");
