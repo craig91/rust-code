@@ -9,8 +9,8 @@ fn main() { // entry point into the program
 
     println!("The secret number is: {secret_number}");
 
+   loop {
     println!("Please input your guess");
-
     let mut guess = String::new();
     // variables in rust are immutable by default. In order to make it mutable you add the mut before the 
     // variable name.
@@ -32,6 +32,12 @@ fn main() { // entry point into the program
     match guess.cmp(&secret_number) {
         Ordering::Less => println!("Too small!"),
         Ordering::Greater => println!("Too big!"),
-        Ordering::Equal => println!("You Win!"),
+        Ordering::Equal => {
+            println!("You Win!");
+            break;
+        }
     }
+   }
+    
+    
 }
